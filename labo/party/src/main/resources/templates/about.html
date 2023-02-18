@@ -1,11 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>About pagina</title>
 </head>
 <body>
 <h1>About me</h1>
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis eligendi facilis laborum magni nam nisi officia pariatur quis saepe temporibus. Aliquid blanditiis consectetur enim libero mollitia quae sapiente sunt voluptatem?</p>
+<p>This is all about me...</p>
+<ol>
+    <li th:text="${name}">naam</li>
+    <li th:text="${street}">street</li>
+    <li th:text="${city}">city</li>
+</ol>
+<p th:text="|Ik ben ${name} en woon in ${street} te ${city}|">waar</p>
 </body>
 </html>

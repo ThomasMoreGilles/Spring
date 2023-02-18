@@ -11,8 +11,8 @@
     <groupId>be.thomasmore</groupId>
     <artifactId>party</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>party</name>
-    <description>party</description>
+    <name>party2023</name>
+    <description>party2023</description>
     <properties>
         <java.version>17</java.version>
     </properties>
