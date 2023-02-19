@@ -9,33 +9,31 @@ import java.time.format.DateTimeFormatter;
 
 @Controller
 public class HomeController {
+
     @GetMapping({"/", "/home"})
     public String home(Model model) {
-        final int calculatedValue = 45 * 34;
-        model.addAttribute("calculatedValue", calculatedValue);
+        int myCalculatedValue = 34 * 62;
+        model.addAttribute("myCalculatedValue", myCalculatedValue);
         return "home";
     }
 
     @GetMapping("/about")
     public String about(Model model) {
-        final String name = "Marc De Caluwé";
-        final String street = "Ridderstraat 12";
-        final String city = "Antwerpen";
-        model.addAttribute("name", name);
-        model.addAttribute("street", street);
-        model.addAttribute("city", city);
+        String myName = "Gilles Rousseaux";
+        String myStreet = "Markgravelei 120";
+        String myCity = "Antwerpen";
+        model.addAttribute("name", myName);
+        model.addAttribute("street", myStreet);
+        model.addAttribute("city", myCity);
         return "about";
     }
 
     @GetMapping("/pay")
     public String pay(Model model) {
         LocalDateTime now = LocalDateTime.now();
-        DateTimeFormatter format = DateTimeFormatter.ofPattern("dd-MM-yy");
-        String formatDateTime = now.format(format);
-        LocalDateTime after = now.plusDays(30);
-        String formatDateTimeAfter = after.format(format);
-        model.addAttribute("formatDateTime", formatDateTime);
-        model.addAttribute("formatDateTimeAfter", formatDateTimeAfter);
+        DateTimeFormatter format = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+        model.addAttribute("now", now.format(format));
+        model.addAttribute("paydate", now.plusDays(30).format(format));
         return "pay";
     }
 }
