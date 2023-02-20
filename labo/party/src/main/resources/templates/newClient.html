@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <link rel="stylesheet" type="text/css" media="all" th:href="@{/css/party.css}"/>
-  <title>About pagina</title>
+  <title>New client</title>
 </head>
 <body>
 <div class="nav">
@@ -20,17 +20,10 @@
 <div class="row1">
   <div class="row1content">
     <div>
-      <h1>About me</h1>
-      <p>This is all about me...</p>
-      <ol>
-        <li th:text="${name}">naam</li>
-        <li th:text="${street}">straat</li>
-        <li th:text="${city}">gemeente</li>
-      </ol>
+      <h1>Homepagina</h1>
+      <p th:text="${myCalculatedValue}">onbekend nummer</p>
 
-      <p th:text="|Ik ben ${name} en woon in ${street} te ${city}|"></p>
-
-      <p><a th:href="@{/}">home</a></p>
+      <p><a th:href="@{/about}">about</a></p>
     </div>
   </div>
 </div>

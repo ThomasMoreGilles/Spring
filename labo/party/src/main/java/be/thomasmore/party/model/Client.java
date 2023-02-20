@@ -1,9 +1,13 @@
 package be.thomasmore.party.model;
 
-import java.time.LocalDate;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 
+import java.time.LocalDate;
+@Entity
 public class Client {
-    private Long id;
+    @Id
+    private Integer id;
     private String name;
     private LocalDate birthdate;
     private char gender;
@@ -16,11 +20,15 @@ public class Client {
         this.startdate = startdate;
     }
 
-    public Long getId() {
+    public Client() {
+
+    }
+
+    public Integer getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
