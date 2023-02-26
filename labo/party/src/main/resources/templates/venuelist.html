@@ -1,0 +1,34 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" media="all" th:href="@{/css/party.css}"/>
+  <title>Venu list</title>
+</head>
+<body>
+<div th:replace="~{fragments/headerfooter :: header}">Hier komt de header</div>
+<div class="freespaceforheader"></div>
+<div class="row1">
+  <div class="row1content">
+    <div>
+      <h1>Venues</h1>
+      <div>
+        <p>outdoor:
+          <a href="/venuelist/outdoor/all"><span class="buttonLook smallButton" th:classappend="${filter==null || filter.equals('all') ? 'activeFilter' : ''}">all</span></a>
+          <a href="/venuelist/outdoor/yes"><span class="buttonLook smallButton" th:classappend="${filter!=null && filter.equals('yes') ? 'activeFilter' : ''}">yes</span></a>
+          <a href="/venuelist/outdoor/no"><span class="buttonLook smallButton" th:classappend="${filter!=null && filter.equals('no') ? 'activeFilter' : ''}">no</span></a>
+        </p>
+      </div>
+      <div th:each="venue : ${venues}">
+        <a th:href="@{'/venuedetails/' + ${venue.id}}">
+          <span class="buttonLook mediumButton"
+                th:text="${venue.getVenueName()}">
+            onbekend nummer</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+<div th:replace="~{fragments/headerfooter :: footer}">Hier komt de footer</div>
+</body>
+</html>
